@@ -29,6 +29,7 @@
 
 cmake_minimum_required(VERSION 2.8.11)
 
+cmake_policy(SET CMP0048 NEW)
 project(hpipm C)
 
 find_package(blasfeo)
