@@ -31,7 +31,7 @@ cmake_minimum_required(VERSION 2.8.11)
 
 project(hpipm C)
 
-set(CMAKE_VERBOSE_MAKEFILE ON)
+find_package(blasfeo)
 
 # Options
 
@@ -43,68 +43,15 @@ set(REF_BLAS 0 CACHE STRING "Set CPU architecture target")
 # set(REF_BLAS BLIS     CACHE STRING "Set CPU architecture target")
 # set(REF_BLAS ATLAS    CACHE STRING "Set CPU architecture target")
 
-# Populate a list of allowable BLAS versions and link it to the option
-set(ALLOWED_REF_BLAS
-		0
-		OPENBLAS
-		NETLIB
-		MKL
-		BLIS
-		ATLAS
-		)
-set_property(CACHE REF_BLAS PROPERTY STRINGS ${ALLOWED_REF_BLAS})
 
-# set(HPIPM_TESTING ON CACHE BOOL "Tests enabled")
 set(HPIPM_TESTING OFF CACHE BOOL "Tests disabled")
 
 # Target architecture
 set(TARGET AVX CACHE STRING "Set CPU architecture target")
 #set(TARGET GENERIC CACHE STRING "Set CPU architecture target")
 
-# Populate a list of allowable targets and link it to the option
-set(ALLOWED_TARGETS
-		AVX
-		GENERIC
-		)
-set_property(CACHE TARGET PROPERTY STRINGS ${ALLOWED_TARGETS})
 
-# build shared library
-set(BUILD_SHARED_LIBS OFF CACHE STRING "Build shared libraries")
 
-# Pass the allowed items up to the parent scope (if there is one)
-# This is detected by comparing the project name to the one set earlier in this file
-if(NOT ${CMAKE_PROJECT_NAME} STREQUAL hpipm)
-	set(HPIPM_ALLOWED_TARGETS ${ALLOWED_TARGETS} PARENT_SCOPE)
-	set(HPIPM_ALLOWED_REF_BLAS ${ALLOWED_REF_BLAS} PARENT_SCOPE)
-endif()
-
-# Installation
-set(CMAKE_INSTALL_PREFIX "/opt/hpipm" CACHE STRING "Installation path")
-
-# BLASFEO Option
-if(NOT TARGET blasfeo)
-	set(BLASFEO_PATH "/opt/blasfeo" CACHE STRING "BLASFEO installation path")
-	if(BUILD_SHARED_LIBS MATCHES OFF)
-		set(HPIPM_BLASFEO_LIB "Static" CACHE STRING "BLASFEO library link type")
-	else()
-		set(HPIPM_BLASFEO_LIB "Shared" CACHE STRING "BLASFEO library link type")
-	endif()
-
-	if(HPIPM_BLASFEO_LIB MATCHES "Static")
-		add_library(blasfeo STATIC IMPORTED)
-		set_target_properties(blasfeo PROPERTIES IMPORTED_LOCATION ${BLASFEO_PATH}/lib/libblasfeo.a)
-	elseif(HPIPM_BLASFEO_LIB MATCHES "Shared")
-		add_library(blasfeo SHARED IMPORTED)
-		set_target_properties(blasfeo PROPERTIES IMPORTED_LOCATION ${BLASFEO_PATH}/lib/libblasfeo.so)
-	endif()
-endif()
-
-# Needed to compile examples
-set(BLASFEO_INCLUDE_DIR "${BLASFEO_PATH}/include")
-set(HPIPM_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
-
-# headers installation directory
-set(HPIPM_HEADERS_INSTALLATION_DIRECTORY "include" CACHE STRING "Headers local installation directory")
 
 # enable runtine checks
 set(RUNTIME_CHECKS 0)
@@ -116,7 +63,7 @@ set(RUNTIME_CHECKS 0)
 ## optimization flags
 # common flags
 if(CMAKE_C_COMPILER_ID MATCHES "GNU" OR CMAKE_C_COMPILER_ID MATCHES "Clang")
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -fPIC")
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
 endif()
 # target-specific flags
 if(${TARGET} MATCHES AVX)
@@ -153,10 +100,6 @@ if(${RUNTIME_CHECKS} MATCHES 1)
 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DRUNTIME_CHECKS")
 endif(${RUNTIME_CHECKS} MATCHES 1)
 
-# architecture-specific flags
-if(${TARGET} MATCHES GENERIC)
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DTARGET_GENERIC")
-endif(${TARGET} MATCHES GENERIC)
 
 # source files
 # cond
@@ -277,9 +220,8 @@ set(HPIPM_SRC ${COND_SRC} ${DENSE_QP_SRC} ${IPM_CORE_SRC} ${OCP_QP_SRC} ${TREE_O
 add_library(hpipm ${HPIPM_SRC})
 target_include_directories(hpipm
 	PUBLIC
-		$<BUILD_INTERFACE:${HPIPM_INCLUDE_DIR}>
-		$<BUILD_INTERFACE:${BLASFEO_INCLUDE_DIR}>
-		$<INSTALL_INTERFACE:${HPIPM_HEADERS_INSTALLATION_DIRECTORY}>)
+		$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+		$<INSTALL_INTERFACE:${HPIPM_HEADERS_INSTALLATION_DIRECTORY}/hpipm>)
 target_link_libraries(hpipm blasfeo)
 
 install(TARGETS hpipm EXPORT hpipmConfig
@@ -287,14 +229,12 @@ install(TARGETS hpipm EXPORT hpipmConfig
 	ARCHIVE DESTINATION lib
 	RUNTIME DESTINATION bin)
 
-install(EXPORT hpipmConfig DESTINATION cmake)
+install(EXPORT hpipmConfig DESTINATION share/hpipm/cmake)
 
 file(GLOB_RECURSE HPIPM_HEADERS "include/*.h")
-install(FILES ${HPIPM_HEADERS} DESTINATION ${HPIPM_HEADERS_INSTALLATION_DIRECTORY})
+install(FILES ${HPIPM_HEADERS} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/hpipm)
 
 # test problems
 if(HPIPM_TESTING MATCHES ON)
 	add_subdirectory(test_problems)
 endif()
-
-message(STATUS "Using BLASFEO path: ${BLASFEO_PATH}")
