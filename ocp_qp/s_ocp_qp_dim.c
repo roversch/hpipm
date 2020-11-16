@@ -38,9 +38,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include <hpipm_s_ocp_qp_dim.h>
-#include <hpipm_aux_string.h>
-#include <hpipm_aux_mem.h>
+#include "hpipm/hpipm_s_ocp_qp_dim.h"
+#include "hpipm/hpipm_aux_string.h"
+#include "hpipm/hpipm_aux_mem.h"
 
 
 

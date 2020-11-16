@@ -38,15 +38,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
-#include <blasfeo_s_aux.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
+#include "blasfeo/blasfeo_s_aux.h"
 
-#include <hpipm_s_ocp_qp_dim.h>
-#include <hpipm_s_ocp_qp.h>
-#include <hpipm_s_ocp_qp_sol.h>
-#include <hpipm_aux_string.h>
-#include <hpipm_aux_mem.h>
+#include "hpipm/hpipm_s_ocp_qp_dim.h"
+#include "hpipm/hpipm_s_ocp_qp.h"
+#include "hpipm/hpipm_s_ocp_qp_sol.h"
+#include "hpipm/hpipm_aux_string.h"
+#include "hpipm/hpipm_aux_mem.h"
 
 
 

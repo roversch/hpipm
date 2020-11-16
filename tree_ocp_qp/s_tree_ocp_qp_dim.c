@@ -35,9 +35,9 @@
 
 
 
-#include <hpipm_tree.h>
-#include <hpipm_scenario_tree.h>
-#include <hpipm_s_tree_ocp_qp_dim.h>
+#include "hpipm/hpipm_tree.h"
+#include "hpipm/hpipm_scenario_tree.h"
+#include "hpipm/hpipm_s_tree_ocp_qp_dim.h"
 
 
 

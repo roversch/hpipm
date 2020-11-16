@@ -4,7 +4,7 @@
 #define MDL_START
 
 // HPIPM
-#include <blasfeo_d_aux_ext_dep.h>
+#include "blasfeo/blasfeo_d_aux_ext_dep.h"
 
 #include "hpipm_d_ocp_qp_ipm.h"
 #include "hpipm_d_ocp_qp_dim.h"

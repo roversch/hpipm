@@ -37,7 +37,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include <blasfeo_s_aux_ext_dep.h>
+#include "blasfeo/blasfeo_s_aux_ext_dep.h"
 
 
 

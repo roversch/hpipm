@@ -38,7 +38,7 @@
 
 
 
-#include <blasfeo_timing.h>
+#include "blasfeo/blasfeo_timing.h"
 
 
 

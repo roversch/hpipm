@@ -40,14 +40,14 @@
 
 
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
 
-#include <hpipm_common.h>
-#include <hpipm_s_ocp_qp_dim.h>
-#include <hpipm_s_ocp_qp.h>
-#include <hpipm_s_ocp_qp_res.h>
-#include <hpipm_s_ocp_qp_sol.h>
+#include "hpipm/hpipm_common.h"
+#include "hpipm/hpipm_s_ocp_qp_dim.h"
+#include "hpipm/hpipm_s_ocp_qp.h"
+#include "hpipm/hpipm_s_ocp_qp_res.h"
+#include "hpipm/hpipm_s_ocp_qp_sol.h"
 
 
 

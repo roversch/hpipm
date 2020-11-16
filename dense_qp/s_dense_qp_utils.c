@@ -36,16 +36,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
-#include <blasfeo_s_aux.h>
-#include <blasfeo_s_aux_ext_dep.h>
-#include <blasfeo_i_aux_ext_dep.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
+#include "blasfeo/blasfeo_s_aux.h"
+#include "blasfeo/blasfeo_s_aux_ext_dep.h"
+#include "blasfeo/blasfeo_i_aux_ext_dep.h"
 
-#include <hpipm_s_dense_qp_dim.h>
-#include <hpipm_s_dense_qp.h>
-#include <hpipm_s_dense_qp_sol.h>
-#include <hpipm_s_dense_qp_res.h>
+#include "hpipm/hpipm_s_dense_qp_dim.h"
+#include "hpipm/hpipm_s_dense_qp.h"
+#include "hpipm/hpipm_s_dense_qp_sol.h"
+#include "hpipm/hpipm_s_dense_qp_res.h"
 #include "hpipm_s_dense_qp_ipm.h"
 
 

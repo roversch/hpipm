@@ -29,10 +29,10 @@
 
 
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
-#include <blasfeo_d_aux.h>
-#include <blasfeo_d_blas.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
+#include "blasfeo/blasfeo_d_aux.h"
+#include "blasfeo/blasfeo_d_blas.h"
 
 #include "../include/hpipm_d_erk_int.h"
 #include "../include/hpipm_d_ocp_qp.h"

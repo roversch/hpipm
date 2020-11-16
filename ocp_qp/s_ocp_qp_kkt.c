@@ -37,17 +37,17 @@
 
 #include <math.h>
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
-#include <blasfeo_s_aux.h>
-#include <blasfeo_s_blas.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
+#include "blasfeo/blasfeo_s_aux.h"
+#include "blasfeo/blasfeo_s_blas.h"
 
-#include <hpipm_s_ocp_qp_dim.h>
-#include <hpipm_s_ocp_qp.h>
-#include <hpipm_s_ocp_qp_sol.h>
-#include <hpipm_s_ocp_qp_ipm.h>
-#include <hpipm_s_core_qp_ipm.h>
-#include <hpipm_s_core_qp_ipm_aux.h>
+#include "hpipm/hpipm_s_ocp_qp_dim.h"
+#include "hpipm/hpipm_s_ocp_qp.h"
+#include "hpipm/hpipm_s_ocp_qp_sol.h"
+#include "hpipm/hpipm_s_ocp_qp_ipm.h"
+#include "hpipm/hpipm_s_core_qp_ipm.h"
+#include "hpipm/hpipm_s_core_qp_ipm_aux.h"
 
 
 

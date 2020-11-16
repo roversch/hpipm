@@ -32,13 +32,13 @@
 #include <math.h>
 #include <sys/time.h>
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
-#include <blasfeo_v_aux_ext_dep.h>
-#include <blasfeo_d_aux_ext_dep.h>
-#include <blasfeo_i_aux_ext_dep.h>
-#include <blasfeo_d_aux.h>
-#include <blasfeo_d_blas.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
+#include "blasfeo/blasfeo_v_aux_ext_dep.h"
+#include "blasfeo/blasfeo_d_aux_ext_dep.h"
+#include "blasfeo/blasfeo_i_aux_ext_dep.h"
+#include "blasfeo/blasfeo_d_aux.h"
+#include "blasfeo/blasfeo_d_blas.h"
 
 #include "../include/hpipm_d_rk_int.h"
 #include "../include/hpipm_d_erk_int.h"

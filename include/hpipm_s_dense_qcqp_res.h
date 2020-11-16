@@ -38,12 +38,12 @@
 
 
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
 
-#include <hpipm_s_dense_qcqp_dim.h>
-#include <hpipm_s_dense_qcqp.h>
-#include <hpipm_s_dense_qcqp_sol.h>
+#include "hpipm/hpipm_s_dense_qcqp_dim.h"
+#include "hpipm/hpipm_s_dense_qcqp.h"
+#include "hpipm/hpipm_s_dense_qcqp_sol.h"
 
 
 

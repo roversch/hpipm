@@ -34,9 +34,9 @@
 #include <stdio.h>
 #endif
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
-#include <blasfeo_s_aux.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
+#include "blasfeo/blasfeo_s_aux.h"
 
 #include "../include/hpipm_s_ocp_nlph"
 #include "../include/hpipm_s_ocp_nlpsol.h"

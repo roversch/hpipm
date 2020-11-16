@@ -38,8 +38,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include <hpipm_d_dense_qp_dim.h>
-#include <hpipm_aux_string.h>
+#include "hpipm/hpipm_d_dense_qp_dim.h"
+#include "hpipm/hpipm_aux_string.h"
 
 
 

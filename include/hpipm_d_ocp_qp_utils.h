@@ -38,8 +38,8 @@
 
 
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
 
 #include "hpipm_d_ocp_qp_dim.h"
 #include "hpipm_d_ocp_qp.h"

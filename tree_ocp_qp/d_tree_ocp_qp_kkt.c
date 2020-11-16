@@ -35,18 +35,18 @@
 
 #include <math.h>
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
-#include <blasfeo_d_aux.h>
-#include <blasfeo_d_blas.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
+#include "blasfeo/blasfeo_d_aux.h"
+#include "blasfeo/blasfeo_d_blas.h"
 
-#include <hpipm_tree.h>
-#include <hpipm_d_tree_ocp_qp.h>
-#include <hpipm_d_tree_ocp_qp_sol.h>
-#include <hpipm_d_tree_ocp_qp_res.h>
-#include <hpipm_d_tree_ocp_qp_ipm.h>
-#include <hpipm_d_core_qp_ipm.h>
-#include <hpipm_d_core_qp_ipm_aux.h>
+#include "hpipm/hpipm_tree.h"
+#include "hpipm/hpipm_d_tree_ocp_qp.h"
+#include "hpipm/hpipm_d_tree_ocp_qp_sol.h"
+#include "hpipm/hpipm_d_tree_ocp_qp_res.h"
+#include "hpipm/hpipm_d_tree_ocp_qp_ipm.h"
+#include "hpipm/hpipm_d_core_qp_ipm.h"
+#include "hpipm/hpipm_d_core_qp_ipm_aux.h"
 
 
 

@@ -40,14 +40,14 @@
 #include <stdio.h>
 #endif
 
-#include <blasfeo_target.h>
-#include <blasfeo_common.h>
-#include <blasfeo_d_aux.h>
+#include "blasfeo/blasfeo_target.h"
+#include "blasfeo/blasfeo_common.h"
+#include "blasfeo/blasfeo_d_aux.h"
 
-#include <hpipm_d_dense_qcqp_dim.h>
-#include <hpipm_d_dense_qcqp.h>
-#include <hpipm_d_dense_qcqp_sol.h>
-#include <hpipm_aux_mem.h>
+#include "hpipm/hpipm_d_dense_qcqp_dim.h"
+#include "hpipm/hpipm_d_dense_qcqp.h"
+#include "hpipm/hpipm_d_dense_qcqp_sol.h"
+#include "hpipm/hpipm_aux_mem.h"
 
 
 
