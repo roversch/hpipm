@@ -46,8 +46,8 @@ set(REF_BLAS 0 CACHE STRING "Set CPU architecture target")
 set(HPIPM_TESTING OFF CACHE BOOL "Tests disabled")
 
 # Target architecture
-set(TARGET AVX CACHE STRING "Set CPU architecture target")
-#set(TARGET GENERIC CACHE STRING "Set CPU architecture target")
+# set(TARGET AVX CACHE STRING "Set CPU architecture target")
+set(TARGET GENERIC CACHE STRING "Set CPU architecture target")
 
 
 
